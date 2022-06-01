@@ -9,7 +9,7 @@ class ModelTest(TestCase):
     """Test Models."""
 
     def test_create_user_with_email_successful(self):
-        """Test creatign a suse with an email is successfull."""
+        """Test creating a user with an email is successful."""
         email = 'biteme@example.com'
         password = 'testpass123'
         user = get_user_model().objects.create_user(
