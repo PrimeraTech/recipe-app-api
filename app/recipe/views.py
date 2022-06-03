@@ -17,7 +17,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        """Retrieve for authenticated user."""
+        """Retrieve recipes for authenticated user."""
         return self.queryset.filter(user=self.request.user).order_by('-id')
 
     def get_serializer_class(self):
@@ -25,7 +25,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
         Configure django rest framework to look for a different class
         for the detail endpoint than the default for the list view
         """
-        if self.action =='list':
+        if self.action == 'list':
             return serializers.RecipeSerializer
 
         return self.serializer_class
