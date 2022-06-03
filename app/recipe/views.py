@@ -28,7 +28,8 @@ class RecipeViewSet(viewsets.ModelViewSet):
         if self.action in ('retrieve', 'update', 'partial_update', 'destroy'):
             return serializers.RecipeDetailSerializer
 
-#        if self.action == 'list':
-#            return serializers.RecipeSerializer
-
         return self.serializer_class
+
+    def perform_create(self, serializer):
+        """Create a new recipe and assign the current user. (overriding ModelViewSet)"""
+        serializer.save(user=self.request.user)
