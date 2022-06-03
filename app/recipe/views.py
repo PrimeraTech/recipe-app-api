@@ -25,7 +25,10 @@ class RecipeViewSet(viewsets.ModelViewSet):
         Configure django rest framework to look for a different class
         for the detail endpoint than the default for the list view
         """
-        if self.action == 'list':
-            return serializers.RecipeSerializer
+        if self.action in ('retrieve', 'update', 'partial_update', 'destroy'):
+            return serializers.RecipeDetailSerializer
+
+#        if self.action == 'list':
+#            return serializers.RecipeSerializer
 
         return self.serializer_class
