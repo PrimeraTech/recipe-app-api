@@ -21,3 +21,8 @@ docker volume rm recipe-app-api_dev-db-data
 
 
 https://github.com/PrimeraTech/recipe-app-api.git
+
+Try:
+https://www.udemy.com/course/django-with-react-an-ecommerce-website/
+
+Use Viewset when CRUD
