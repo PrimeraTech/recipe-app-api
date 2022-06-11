@@ -28,3 +28,6 @@ Try:
 https://www.udemy.com/course/django-with-react-an-ecommerce-website/
 
 Use Viewset when CRUD
+
+user@example.com
+userpassword123
