@@ -21,6 +21,12 @@ docker-compose up
 docker volume ls
 docker volume rm recipe-app-api_dev-db-data
 
+#clear any docker containers that might be running.
+docker-compose -f docker-compose-deploy.yml down
+
+#run depoyment server
+docker-compose -f docker-compose-deploy.yml up
+ 
 
 https://github.com/PrimeraTech/recipe-app-api.git
 
